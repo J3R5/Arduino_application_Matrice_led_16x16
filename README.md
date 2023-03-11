@@ -8,4 +8,4 @@ Ce projet Comportera deux grandes partie différente :
 ### Introduction
 
 Ce projet a pour but de coder une matrice de Led RGB 16x16 via une carte arduino. 
-La matrice de led RGB utilisé est basé sur les led RGB adressable [WS2812B]([file:///C:/Users/cleme/Downloads/WS2812B.PDF](https://pdf1.alldatasheet.com/datasheet-pdf/view/1179113/WORLDSEMI/WS2812B.html))
+La matrice de led RGB utilisé est basé sur les led RGB adressable [WS2812B](https://pdf1.alldatasheet.com/datasheet-pdf/view/1179113/WORLDSEMI/WS2812B.html)
