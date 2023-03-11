@@ -21,9 +21,11 @@ eletronique a la matrice.
 Le **code** a été réalisée via [l'IDE Arduino](https://www.arduino.cc/en/software)
 et on utilise aussi la bibliothèque [FastLed](https://fastled.io/).
 
-[Partie Complète ici]()
+[Partie Complète]()
 
 #### Partie C# Application
 
-Cette partie est l'application qui permet de générér le code C++ pour la matrice de led
+Cette partie est l'application qui permet de générer le code C++ pour la matrice de led
 le projet a été coder en [Window Form](https://learn.microsoft.com/fr-fr/dotnet/desktop/winforms/overview/?view=netdesktop-7.0) via le logiciel [Visual Studio](https://visualstudio.microsoft.com/fr/).
+
+[Partie Complète]()
