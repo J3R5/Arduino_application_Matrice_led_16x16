@@ -21,7 +21,7 @@ eletronique a la matrice.
 Le **code** a été réalisée via [l'IDE Arduino](https://www.arduino.cc/en/software)
 et on utilise aussi la bibliothèque [FastLed](https://fastled.io/).
 
-[Partie Complète](../C++ matrice physique/Description C++.md)
+[Partie Complète](https://github.com/R5ELS/Arduino_application_Matrice_led_16x16/blob/main/C++%20matrice%20physique/Description_C++.md)
 
 #### Partie C# Application
 
