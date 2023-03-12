@@ -135,5 +135,9 @@ void Matrice_16x16()
 
 ~~~
 
+La matrice de led est un ruban mais aussi un ruban en Zig Zag comme un serpent
+exemple :
+[Photo](http://url/to/img.png)
+
 
 
