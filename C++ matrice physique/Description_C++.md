@@ -431,6 +431,8 @@ void papillon()
 la fonction est un peu longue et a été fait via l'application **C#** cela permet de gagner beaucoup de temps et d'évité de faire des erreurs contrairement a si l'on fait 
 les chaque pixels __1__ par __1__ a la main.
 
+La fonction papillon utilise d'elle même la fonction de convertion matrice 2D --> 1D puis elle affiche le résultat grace a la ligne FastLED.show();
+
 Voila un résumé de la partie C++ pour plus de détaille il faut regarder la document C++ dédié [Document C++]()
 
 
