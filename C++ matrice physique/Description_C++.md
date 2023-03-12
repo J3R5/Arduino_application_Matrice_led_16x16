@@ -19,7 +19,7 @@ donc sois on code directement comme un ruban les 256 sois on code comme une matr
 de conversion **2D** en **1D**. Une variable en **2D** permet de crée des animation de mouvement facilement (exemple : deplacement
 gauche, droite)
 
-##### Initialisation :
+#### Initialisation :
 
 Une fois la bibliothèque installer on doit l'importer (via un #include) dans le code :
 ~~~C++
@@ -55,7 +55,7 @@ int carreaux; //variable position led matrice réel
 
 ~~~
 
-##### Void Setup :
+#### Void Setup :
 
 Après on passe a L'initialisation la boucle setup ou l'on initialise la matrice puis
 on regle la luminosité
@@ -73,7 +73,7 @@ void setup() {
 
 ~~~
 
-##### Void loop :
+#### Void loop :
 
 après L'initialisation on as la boucle loop qui contient une fonction de ce que doit afficher
 la matrice.
@@ -90,4 +90,50 @@ void loop() {
 
 On utilise une fonction au lieu de mettre directement le code car il y a beaucoup de ligne de code et si on souhaite montré plusieurs image successivement il est plus simple d'utilisé des fonctions.
 
-##### Fonction :
+#### Fonction :
+
+Il a deux fonctions dans se programme l'une est la fonction de conversion 2D en 1D et une autre est un qui est l'affichage du papillons
+
+Fonction Convertion 2D --> 1D :
+
+
+~~~C++
+void Matrice_16x16()
+{
+  /*
+  * Fonction convertion tableau 2D
+  * en 1D représentation réel
+  * Ruban du tableau
+  *
+  * Jérémy Clémente 11/03/2022
+  */
+
+  //variable
+  carreaux = 0;
+
+  //Début
+  for (k = 0; k<16; k = k + 1) 
+  {
+    if (k % 2 == 0) {
+      for (i=15; i>=0; i = i - 1) 
+      {
+        leds[carreaux] = leds_16x16[k][i];
+        carreaux = carreaux + 1 ;
+      }
+    }
+    else 
+    {
+      for (i=0; i<16; i = i + 1) 
+      {
+        leds[carreaux] = leds_16x16[k][i];
+        carreaux = carreaux + 1 ;
+      }
+    }
+  }
+  //Fin
+}
+
+~~~
+
+
+
