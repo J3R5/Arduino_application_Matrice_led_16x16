@@ -14,6 +14,11 @@ Le code __C++__ utilise la bibliothèque [FastLed](https://fastled.io/).
 
 Dans un premier temps il faut installer la bibliothèque [FastLed](https://fastled.io/) (si vous ne savez pas installé une bibliothèque voici un [tutoriel](https://fablabutc.fr/wp-content/uploads/2021/01/Tutoriel_Installer-une-bibliotheque-pour-Arduino.pdf)).
 
+Il faut savoir que la matrice de leds est est considérée comme un ruban de __256 leds__ et non comme une vraie matrice 
+donc sois on code directement comme un ruban les 256 sois on code comme une matrice **2D** puis on crée une fonction 
+de conversion **2D** en **1D**. Une variable en **2D** permet de crée des animation de mouvement facilement (exemple : deplacement
+gauche, droite)
+
 Une fois la bibliothèque installer on doit l'importer (via un #include) dans le code :
 ~~~C++
 
@@ -22,6 +27,7 @@ Une fois la bibliothèque installer on doit l'importer (via un #include) dans le
 //-------------------------------//
 
 ~~~
+
 
 après on Définie Le nombre de led du ruban ou de la matrice et le pin qui sert pour la data
 
@@ -34,10 +40,46 @@ après on Définie Le nombre de led du ruban ou de la matrice et le pin qui sert
 
 ~~~
 
+Ensuite on déclare à Les variables :
 
+~~~C++
 
+//-----------Variable-----------//
+CRGB leds[NUM_LEDS]; //tableau Led réelle
+CRGB leds_16x16[16][16]; //tableau led application
+int i,k,t; //variable boucle
+int carreaux; //variable position led matrice réel
+//-----------------------------//
 
+~~~
 
+Après on passe a L'initialisation la boucle setup ou l'on initialise la matrice puis
+on regle la luminosité
 
+~~~C++
 
+void setup() {
+  
+  //-----------Initialisation-----------//
+  FastLED.addLeds<NEOPIXEL, DATA_PIN>(leds, NUM_LEDS); //initialisation Bandeau et pin
+  FastLED.setBrightness(12); //reglage luminosité global
+  //-----------------------------------//
 
+}
+
+~~~
+
+après L'initialisation on as la boucle loop qui contient une fonction de ce que doit afficher
+la matrice.
+
+~~~C++
+
+void loop() {
+  
+  papillon();
+
+}
+
+~~~
+
+On utilise une fonction au lieu de mettre directement le code car il y a beaucoup de ligne de code et si on souhaite montré plusieurs image successivement il est plus simple d'utilisé des fonctions.
