@@ -428,8 +428,10 @@ void papillon()
 
 ~~~
 
-la fonction est un peut longue et a été fait via l'application C# cela permet de gagner beaucoup de temps et d'évité de faire des erreurs si on fait 
-les chaque pixels 1 par 1.
+la fonction est un peu longue et a été fait via l'application **C#** cela permet de gagner beaucoup de temps et d'évité de faire des erreurs contrairement a si l'on fait 
+les chaque pixels __1__ par __1__ a la main.
+
+Voila un résumé de la partie C++ pour plus de détaille il faut regarder la document C++ dédié [Document C++]()
 
 
 
