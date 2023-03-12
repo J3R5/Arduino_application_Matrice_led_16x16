@@ -19,6 +19,8 @@ donc sois on code directement comme un ruban les 256 sois on code comme une matr
 de conversion **2D** en **1D**. Une variable en **2D** permet de crée des animation de mouvement facilement (exemple : deplacement
 gauche, droite)
 
+##### Initialisation :
+
 Une fois la bibliothèque installer on doit l'importer (via un #include) dans le code :
 ~~~C++
 
@@ -53,6 +55,8 @@ int carreaux; //variable position led matrice réel
 
 ~~~
 
+##### Void Setup :
+
 Après on passe a L'initialisation la boucle setup ou l'on initialise la matrice puis
 on regle la luminosité
 
@@ -69,6 +73,8 @@ void setup() {
 
 ~~~
 
+##### Void loop :
+
 après L'initialisation on as la boucle loop qui contient une fonction de ce que doit afficher
 la matrice.
 
@@ -83,3 +89,5 @@ void loop() {
 ~~~
 
 On utilise une fonction au lieu de mettre directement le code car il y a beaucoup de ligne de code et si on souhaite montré plusieurs image successivement il est plus simple d'utilisé des fonctions.
+
+##### Fonction :
