@@ -11,3 +11,13 @@ Cette partie va detaillé et expliqué les différentes partie du code.
 * [Application Window Form](https://learn.microsoft.com/fr-fr/dotnet/desktop/winforms/overview/?view=netdesktop-7.0)
 
 Pour crée l'application on se sert de visual studio et plus précisément, on crée un projet Window Form.
+
+### Explication :
+
+Dans les explications il y aura deux parties une partie sera dédié au Form et une autre au code du Form.
+
+#### Partie Form :
+
+Photo du form :
+
+
