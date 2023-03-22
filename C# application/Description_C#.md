@@ -196,7 +196,93 @@ Ca position est assigné via la variable position qui est aussi envoyer dans la 
 
 On lui donne ca couleur de base Vert clair et enfin on retourne les informations du bouton.
 
+##### Fonction Couleur Boutons
 
+Cette fonction est utilisé quand un bouton parmis les 256 clique dessus et lui dit qu'elle couleur prendre.
+
+~~~C#
+
+        private void button_couleur__Click(object sender, EventArgs e)
+        {
+            /*
+             * Fonction associé a chaque
+             * bouton qui leur fait changé de
+             * couleur
+             * 
+             * Jérémy Clémente 11/03/2023
+             */
+
+            //Variable
+            Button button;
+            int Nbre_Couleur;
+
+            //Début
+
+            try
+            {
+                Nbre_Couleur = Convert.ToInt16(CB_Nbre.Text); 
+            }
+            catch 
+            {
+                Nbre_Couleur = 0;
+                
+            }
+
+            if (sender is Button)
+            {
+                button = sender as Button;
+
+                if (button.BackColor == Color.LightGreen && Nbre_Couleur >= 1 )
+                { 
+                    button.BackColor = Color.Orange;
+                    button.ForeColor = Color.Orange;
+                }
+                else if (button.BackColor == Color.Orange && Nbre_Couleur >= 2 )
+                { 
+                    button.BackColor = Color.LightBlue;
+                    button.ForeColor = Color.LightBlue;
+                }
+                else if (button.BackColor == Color.LightBlue && Nbre_Couleur >= 3 )
+                {
+                    button.BackColor = Color.DarkBlue;
+                    button.ForeColor = Color.DarkBlue;
+                }
+                else if (button.BackColor == Color.DarkBlue && Nbre_Couleur >= 4 )
+                {
+                    button.BackColor = Color.Red;
+                    button.ForeColor = Color.Red;
+                }
+                else if (button.BackColor == Color.Red && Nbre_Couleur >= 5 )
+                {
+                    button.BackColor = Color.Gold;
+                    button.ForeColor = Color.Gold;
+                }
+                else if (button.BackColor == Color.Gold && Nbre_Couleur >= 6 )
+                {
+                    button.BackColor = Color.Purple;
+                    button.ForeColor = Color.Purple;
+                }
+                else if (button.BackColor == Color.Purple && Nbre_Couleur >= 7 )
+                {
+                    button.BackColor = Color.Cyan;
+                    button.ForeColor = Color.Cyan;
+                }
+                else if (button.BackColor == Color.Cyan && Nbre_Couleur >= 8 )
+                {
+                    button.BackColor = Color.DarkCyan;
+                    button.ForeColor = Color.DarkCyan;
+                }
+                else
+                {
+                    button.BackColor = Color.LightGreen;
+                    button.ForeColor = Color.LightGreen;
+                }
+
+                //Fin
+            }
+        }
+
+~~~
 
 
 
