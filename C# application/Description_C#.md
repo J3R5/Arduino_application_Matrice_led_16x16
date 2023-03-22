@@ -76,7 +76,128 @@ le **programme**.
 
 Donc il y a plusieurs variables globales :
 L'une gère les différentes couleurs 8 variables pour les 8 couleurs il serait possible d'utilisé un tableau monodimension avec 8 case a la place des 8 variables.
-L'autre est la variables des 256 boutons, les 256 boutons ne sont placer a la main mais crée via le code, placé les boutons a la main serai long et fastidieux.
+L'autre est la variables des 256 boutons (un tableau 2D), les 256 boutons ne sont placer a la main mais crée via le code, placé les boutons a la main serai long et fastidieux.
+
+##### Form 
+
+Après les variables globale on as le form ou l'on initialisation les composants.
+
+~~~C#
+
+        public Form1()
+        {
+
+            InitializeComponent();
+        }
+        
+~~~        
+
+##### Génération du Form
+
+L'une des première fonction importante est le Form Load c'est fonction va créer les 256 boutons et donner les caractéristique a chaque bouton.
+
+~~~C#
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            /*
+             * Lors de la génération du form
+             * l'on crée les 256 boutons
+             * 
+             * Jérémy Clémente 11/03/2023
+             */
+
+            //Variable
+            int i, j;
+            Point LePoint=new Point();
+
+            //Début
+
+            //Génération des 256 boutons
+            for ( i = 0; i < Matrice_Bouton.GetLength(0); i++)
+            {
+                for (j = 0; j < Matrice_Bouton.GetLength(1); j++)
+                {
+                    LePoint.X = 10+((44+2)*j);
+                    LePoint.Y = 100+((44+2)*i);
+                    Matrice_Bouton[i, j] = GenerateButton(i+";"+j, 44, LePoint);
+                    Matrice_Bouton[i, j].Click += button_couleur__Click;
+                    Controls.Add(Matrice_Bouton[i, j]);
+                }
+            }
+
+            //Fin
+            // location 10, 160
+            //size 44, 44
+
+        }
+
+~~~
+
+**Les Variables** de la fonction i,j servent au boucles quand a la variable LePoint sert a déterminer les différente coordonnée des boutons.
+
+Les deux boucles imbriqué sert a choisir les boutons dans l'ordre a générer donc on commence par dire la position du bouton chaque bouton seront legerement decaller les un des autres sur l'axe X grace a la variable j quand a la variable i elle sert a choisir la ligne.
+
+Ensuite On utilise une fonction pour générer plus précisement les boutons (fonction développez juste après) puis on assigne la fonction de clique au bouton (la fonction sera aussi détailler plus tard) 
+Enfin une fois le bouton générer avec ces différente information on le place.
+On répète l'opération 256 fois pour les 256 boutons.
+
+###### Fonction Génération Bouton
+
+La fonction du Form Load appelle la fonction de génération de bouton pour les crée fonction que voici 
+
+~~~C#
+
+        static Button GenerateButton(string NumBouton, int Taille, Point Position)
+        {
+            /*
+             * fonction de création de
+             * boutons
+             * 
+             * Jérémy Clémente 11/03/2023
+             */
+
+            //Variable
+            Button LeButton = new Button();
+
+            //Début
+            LeButton.Name = "Button" + NumBouton;
+            LeButton.Text = NumBouton;
+            LeButton.Enabled = true;
+            LeButton.Visible = true;
+            LeButton.Width = Taille;
+            LeButton.Height = Taille;
+            LeButton.Location = Position;
+            LeButton.BackColor = Color.LightGreen;
+            LeButton.ForeColor = Color.LightGreen;
+
+            return LeButton;
+            //Fin
+        }
+
+~~~
+
+Cette fonction recoit plusieurs paramètre : 
+* Le Nom du bouton
+* ca taille ici un carré
+* et sa position
+
+Cette fonction quand a elle renvoie les informations du bouton via le return.
+
+Dans cette fonction on assigne le Nom du boutton avec une base "Button" + les coordonnée du bouton qui va de 0;0 jusqu'à 15;15.
+
+On lui donne sont texte qui est aussi sa postion dans le tableau de bouton.
+
+Ensuite on lui dit qu'il existe et que il doit être visible.
+
+Ca taille est gérée grace a valeur envoyer on assigne la même pour sa longueur et largeur donc se sera forcement un carré.
+
+Ca position est assigné via la variable position qui est aussi envoyer dans la fonction.
+
+On lui donne ca couleur de base Vert clair et enfin on retourne les informations du bouton.
+
+
+
 
 
 
