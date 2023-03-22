@@ -29,6 +29,13 @@ On peut voir que l'application est composée de plusieurs partie :
 * Une partie de deux bouton l'un pour lancer la génération du code et l'autre pour la reinitialisation
 * Une dernier textbox qui permet de choisir le nombre de couleur
 
+
+#### Comment Utilisé l'application 
+
+Pour utilisé l'application Voici les différente information a savoir :
+
+Les boutons vert a gauche en bas des couleurs sont les pixels de la matrice 1 bouton représente 1 led de la matrice pour faire changé un pixel de couleur il faut deja choisir le nombre de couleurs de 1 à 8.
+
 #### Code
 
 Une fois que le **form** a été montrer et explique on va maintenant parler du **code** en lui meme
