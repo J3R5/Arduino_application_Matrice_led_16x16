@@ -36,6 +36,8 @@ Pour utilisé l'application Voici les différente information a savoir :
 
 Les boutons vert a gauche en bas des couleurs sont les pixels de la matrice 1 bouton représente 1 led de la matrice pour faire changé un pixel de couleur il faut deja choisir le nombre de couleurs de 1 à 8.
 
+Une fois les couleurs choisis on peut changer les couleurs des boutons. Les cases couleurs de 1 a 6 serve au code c'est ici que l'on dit si les case doivent etre rouge vert ou autre
+
 #### Code
 
 Une fois que le **form** a été montrer et explique on va maintenant parler du **code** en lui meme
