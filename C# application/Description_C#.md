@@ -44,7 +44,7 @@ Une fois les couleurs choisis on peut changer les couleurs des boutons. Les case
 
 apres avoir choisis les couleurs et les cases a colorer on peut generer le code via le bouton **start** le code sera dans la grande textebox a droite et la petite sera une image du resultat sans les couleurs. 
 
-Il y as aussi une fonction de sauvegarde 
+Il y as aussi une fonction de sauvegarde il faut mettre un nom dans la textbox puis
  
 #### Code
 
