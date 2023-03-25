@@ -46,7 +46,9 @@ Apres avoir choisis les couleurs et les cases a colorer on peut generer le code 
 
 En dessous du bouton **start** il y a un bouton **Reset** qui remet tous les boutons de la matrice en vert et supprime le texte dans les textbox de couleurs.
 
-Il y as aussi une fonction de sauvegarde il faut mettre un nom dans la textbox puis appuyer sur le bouton de sauvegarde (dans le cas ou il n'y pas de nom le nom sera "sans_nom"). IL y a aussi donc une fonction d'importation pour cela il faut juste mettre le nom du fichier de sauvegarde et les textBox et les boutons prendront leur couleurs
+Il y as aussi une fonction de sauvegarde il faut mettre un nom dans la textbox puis appuyer sur le bouton de sauvegarde (dans le cas ou il n'y pas de nom le nom sera __"sans_nom"__). IL y a aussi donc une fonction d'importation pour cela il faut juste mettre le nom du fichier de sauvegarde et les textBox et les boutons prendront leur couleurs et leurs texte.
+
+En cas de tentative d'ouverture d'un **fichier inexistant** il ne se passera rien, Les fichiers on pour extension **.Matrice_16x16**.
  
 #### Code
 
@@ -304,7 +306,12 @@ Cette fonction est utilisé quand un bouton parmis les 256 clique dessus et lui 
 
 ~~~
 
+Variable : 
 
+Cette fonction Utilise deux variables une variable bouton et une autre un entier qui sert combien de couleur on utilise.
+
+La première partie de la fonction essaye de convertir ce qui as dans la TextBox du nombre de couleur en nombre si elle ne peut pas le convertir en nombre il prend 0 comme 
+valeur par defaut.
 
 
 
