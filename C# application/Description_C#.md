@@ -42,9 +42,11 @@ Une fois les couleurs choisis on peut changer les couleurs des boutons. Les case
 + On peut aussi dire la couleur précise avec la syntaxe **CRGB(R, G, B);** (**R,G,B** est une associé a rouge vert bleu et chaque couleur est compris de **0** à **255**).
 + Il reste aussi la possibilité d'utilise un code en Hexadécimal comme par exemple **0xFF0000;** (ici il ni a pas de CRGB juste la syntax Hexadecimal)
 
-apres avoir choisis les couleurs et les cases a colorer on peut generer le code via le bouton **start** le code sera dans la grande textebox a droite et la petite sera une image du resultat sans les couleurs. 
+Apres avoir choisis les couleurs et les cases a colorer on peut generer le code via le bouton **start** le code sera dans la grande textebox a droite et la petite sera une image du resultat sans les couleurs.
 
-Il y as aussi une fonction de sauvegarde il faut mettre un nom dans la textbox puis
+En dessous du bouton **start** il y a un bouton **Reset** qui remet tous les boutons de la matrice en vert et supprime le texte dans les textbox de couleurs.
+
+Il y as aussi une fonction de sauvegarde il faut mettre un nom dans la textbox puis appuyer sur le bouton de sauvegarde (dans le cas ou il n'y pas de nom le nom sera "sans_nom"). IL y a aussi donc une fonction d'importation pour cela il faut juste mettre le nom du fichier de sauvegarde et les textBox et les boutons prendront leur couleurs
  
 #### Code
 
@@ -105,6 +107,7 @@ Après les variables globale on as le form ou l'on initialisation les composants
         {
 
             InitializeComponent();
+            
         }
         
 ~~~        
