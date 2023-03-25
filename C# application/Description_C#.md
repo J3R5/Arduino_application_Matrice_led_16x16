@@ -34,13 +34,21 @@ On peut voir que l'application est composée de plusieurs partie :
 
 Pour utilisé l'application Voici les différente information a savoir :
 
-Les boutons vert a gauche en bas des couleurs sont les pixels de la matrice 1 bouton représente 1 led de la matrice pour faire changé un pixel de couleur il faut deja choisir le nombre de couleurs de 1 à 8.
+Les boutons vert a gauche en bas des couleurs sont les pixels de la matrice 1 bouton représente 1 led de la matrice pour faire changé un pixel de couleur il faut deja choisir le nombre de couleurs de __1__ à __8__.
 
-Une fois les couleurs choisis on peut changer les couleurs des boutons. Les cases couleurs de 1 a 6 serve au code c'est ici que l'on dit si les case doivent etre rouge vert ou autre
+Une fois les couleurs choisis on peut changer les couleurs des boutons. Les cases couleurs de __1__ à __8__ serve au code c'est ici que l'on dit si les case doivent etre rouge vert ou autre en respectant la syntaxe il y a trois possibilité pour afficher une **couleur** :
 
++ Utilisé les couleurs par defaut avec la syntaxe **CRGB::Red;** (exemple pour la couleur rouge).
++ On peut aussi dire la couleur précise avec la syntaxe **CRGB(R, G, B);** (**R,G,B** est une associé a rouge vert bleu et chaque couleur est compris de **0** à **255**).
++ Il reste aussi la possibilité d'utilise un code en Hexadécimal comme par exemple **0xFF0000;** (ici il ni a pas de CRGB juste la syntax Hexadecimal)
+
+apres avoir choisis les couleurs et les cases a colorer on peut generer le code via le bouton **start** le code sera dans la grande textebox a droite et la petite sera une image du resultat sans les couleurs. 
+
+Il y as aussi une fonction de sauvegarde 
+ 
 #### Code
 
-Une fois que le **form** a été montrer et explique on va maintenant parler du **code** en lui meme
+Une fois que le **form** a été montrer et explique on va maintenant parler du **code** en lui même.
 
 
 ##### Using
