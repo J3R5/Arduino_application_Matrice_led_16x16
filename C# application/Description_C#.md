@@ -305,17 +305,135 @@ Cette fonction est utilisé quand un bouton parmis les 256 clique dessus et lui 
         }
 
 ~~~
+Cette fonction est associé a tous les boutons de la matrice.
 
-Variable : 
+**Variable :**
 
 Cette fonction Utilise deux variables une variable bouton et une autre un entier qui sert combien de couleur on utilise.
 
+**Fonctionnement :**
+
 La première partie de la fonction essaye de convertir ce qui as dans la TextBox du nombre de couleur en nombre si elle ne peut pas le convertir en nombre il prend 0 comme 
-valeur par defaut.
+valeur par defaut. Cela évite que l'on rentre **une lettre** et que **lors de l'utilisation** de la fonction l'application crash.
+
+On vérifie que c'est un bouton qui est appuyer. Après l'on rentre dans un grand nombre de else if qui va déterminer la couleur suivante a prendre. Pour passer a la couleur suivante on prend en compte la couleur actuel du bouton. Une autre condition lors du changement de couleur est le nombre contenue dans la textbox du nombre de couleur.
+
+##### Fonction bouton reset 
+
+~~~C#
+
+        private void Bouton_reset_Click(object sender, EventArgs e)
+        {
+            /*
+             * Fonction qui redonne la
+             * couleur d'origine au 256
+             * Boutons et reset les textes
+             * 
+             * Jérémy Clémente
+             */
+
+            //Variable
+            Control[] controls = this.Controls.OfType<Button>().ToArray();
+
+            //Début
+
+            //reset chaque bouton
+            foreach (Control control in controls)
+            {
+                Button button = control as Button;
+                if (control is Button && button.Name != "Bouton_reset" && button.Name != "Start" && button.Name != "BP_import" && button.Name != "BP_sauvegarde")
+                {
+                    button.BackColor = Color.LightGreen;
+                    button.ForeColor = Color.LightGreen; 
+                }
+            }
+
+            Couleur_1.Text = "";
+            Couleur_2.Text = "";
+            Couleur_3.Text = "";
+            Couleur_4.Text = "";
+            Couleur_5.Text = "";
+            Couleur_6.Text = "";
+            Couleur_7.Text = "";
+            Couleur_8.Text = "";
 
 
+            //Fin
+        }
 
+~~~
 
+Cette fonction a pour but de réinitialisée l'état de tous les boutons de la matrice ainsi que les textbox de couleur.
 
+**Variable :**
 
+Cette partie du code utilise une variable qui va passer en revue tous les boutons.
 
+**Fonctionnement :**
+
+Dans un premier temps la fonction va passer tous les boutons en revue et leur redonner leur couleurs d'origine (Vert clair). Des boutons ne sont pas affectés par cette variable se sont les boutons Rest, Start, Sauvegarde et Import.
+
+Dans un second temps cette fonction va reset les textBox de couleur supprimant leur contenus.
+
+##### Fonction Sauvegarde
+
+~~~C#
+
+        private void BP_sauvegarde_Click(object sender, EventArgs e)
+        {
+            /*
+             * Cette fonction sert a sauvegarder
+             * le fichier pour peut être s'en servir plus tard
+             * 
+             * Jérémy Clémente 19/03/2023
+             */
+
+            //Variable
+            StreamWriter fichier_svg;
+            string Nom;
+            int i, j;
+
+            //Début
+            couleur_led1 = Couleur_1.Text;
+            couleur_led2 = Couleur_2.Text;
+            couleur_led3 = Couleur_3.Text;
+            couleur_led4 = Couleur_4.Text;
+            couleur_led5 = Couleur_5.Text;
+            couleur_led6 = Couleur_6.Text;
+            couleur_led7 = Couleur_7.Text;
+            couleur_led8 = Couleur_8.Text;
+
+            Nom = "defaut";
+            Nom = T_Nom_svg.Text;
+
+            using (fichier_svg = new StreamWriter(Nom + ".Matrice_16x16"))
+            {
+                fichier_svg.WriteLine(couleur_led1);
+                fichier_svg.WriteLine(couleur_led2);
+                fichier_svg.WriteLine(couleur_led3);
+                fichier_svg.WriteLine(couleur_led4);
+                fichier_svg.WriteLine(couleur_led5);
+                fichier_svg.WriteLine(couleur_led6);
+                fichier_svg.WriteLine(couleur_led7);
+                fichier_svg.WriteLine(couleur_led8);
+                for (i = 0; i < 16; i++)
+                {
+                    for (j = 0; j < 16; j++)
+                    {
+                        fichier_svg.WriteLine(Matrice_Bouton[i,j].BackColor);
+                    }
+                }
+            }
+
+            //Fin
+        }
+
+~~~
+
+Cette fonction a pour but de créer un fichier contenant les informations de l'image l'endroit de l'exécutable.
+
+**Variable :**
+
+Les Varaibles importantes de la fonction sont la variable fichier_svg qui sert a écrire et créer le fichier, Nom qui est le nom du fichier et les différente variable de couleurs qui prennent les couleurs des textBox. Il y a aussi les variable i et j qui sert au boucle.
+
+**Fonctionnement :** 
