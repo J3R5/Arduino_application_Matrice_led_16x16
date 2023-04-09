@@ -437,3 +437,5 @@ Cette fonction a pour but de créer un fichier contenant les informations de l'i
 Les Varaibles importantes de la fonction sont la variable fichier_svg qui sert a écrire et créer le fichier, Nom qui est le nom du fichier et les différente variable de couleurs qui prennent les couleurs des textBox. Il y a aussi les variable i et j qui sert au boucle.
 
 **Fonctionnement :** 
+
+Cette fonction va créer un fichier .Matrice_16x16 avec les informations de l'image. Le fichier sera créer a l'emplacement de l'application. Dans un premier temps le programme va prendre le nom dans la textBox de sauvegarder pour nommer le fichier. Si la textbox est vide le nom par defaut est "defaut". Après avoir créer le fichier le programme va écrire dedans. Les huit premières lignes servent pour les textes dans les huit TextBox des couleurs. La suite du fichier est pour les 256 boutons ou chaque lignes est la couleurs d'un bouton.
