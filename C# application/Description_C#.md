@@ -434,8 +434,128 @@ Cette fonction a pour but de créer un fichier contenant les informations de l'i
 
 **Variable :**
 
-Les Varaibles importantes de la fonction sont la variable fichier_svg qui sert a écrire et créer le fichier, Nom qui est le nom du fichier et les différente variable de couleurs qui prennent les couleurs des textBox. Il y a aussi les variable i et j qui sert au boucle.
+Les Variables importantes de la fonction sont la variable fichier_svg qui sert a écrire et créer le fichier, Nom qui est le nom du fichier et les différente variable de couleurs qui prennent les couleurs des textBox. Il y a aussi les variable i et j qui sert au boucle.
 
 **Fonctionnement :** 
 
 Cette fonction va créer un fichier .Matrice_16x16 avec les informations de l'image. Le fichier sera créer a l'emplacement de l'application. Dans un premier temps le programme va prendre le nom dans la textBox de sauvegarder pour nommer le fichier. Si la textbox est vide le nom par defaut est "defaut". Après avoir créer le fichier le programme va écrire dedans. Les huit premières lignes servent pour les textes dans les huit TextBox des couleurs. La suite du fichier est pour les 256 boutons ou chaque lignes est la couleurs d'un bouton.
+
+##### Fonction Importation
+
+~~~C#
+
+        private void BP_import_Click(object sender, EventArgs e)
+        {
+            /*
+             * Cette fonction sert a sauvegarder
+             * le fichier pour peut être s'en servir plus tard
+             * 
+             * Jérémy Clémente 19/03/2023
+             */
+
+            //Variable
+            StreamReader fichier_import;
+            string Nom, couleur;
+            int i, j;
+
+            //Début
+
+            Nom = "sans_nom";
+
+            try
+            {
+                Nom = T_import.Text;
+
+                using (fichier_import = new StreamReader(Nom + ".Matrice_16x16", true))
+                {
+                    Couleur_1.Text = fichier_import.ReadLine();
+                    Couleur_2.Text = fichier_import.ReadLine();
+                    Couleur_3.Text = fichier_import.ReadLine();
+                    Couleur_4.Text = fichier_import.ReadLine();
+                    Couleur_5.Text = fichier_import.ReadLine();
+                    Couleur_6.Text = fichier_import.ReadLine();
+                    Couleur_7.Text = fichier_import.ReadLine();
+                    Couleur_8.Text = fichier_import.ReadLine();
+
+                    for (i = 0; i < 16; i++)
+                    {
+                        for (j = 0; j < 16; j++)
+                        {
+                            couleur = fichier_import.ReadLine();
+                            switch (couleur)
+                            {
+                                case "Color [LightGreen]":
+                                    Matrice_Bouton[i, j].BackColor = Color.LightGreen;
+                                    Matrice_Bouton[i, j].ForeColor = Color.LightGreen;
+                                    break;
+                                case "Color [Orange]":
+                                    Matrice_Bouton[i, j].BackColor = Color.Orange;
+                                    Matrice_Bouton[i, j].ForeColor = Color.Orange;
+                                    break;
+                                case "Color [LightBlue]":
+                                    Matrice_Bouton[i, j].BackColor = Color.LightBlue;
+                                    Matrice_Bouton[i, j].ForeColor = Color.LightBlue;
+                                    break;
+                                case "Color [DarkBlue]":
+                                    Matrice_Bouton[i, j].BackColor = Color.DarkBlue;
+                                    Matrice_Bouton[i, j].ForeColor = Color.DarkBlue;
+                                    break;
+                                case "Color [Red]":
+                                    Matrice_Bouton[i, j].BackColor = Color.Red;
+                                    Matrice_Bouton[i, j].ForeColor = Color.Red;
+                                    break;
+                                case "Color [Gold]":
+                                    Matrice_Bouton[i, j].BackColor = Color.Gold;
+                                    Matrice_Bouton[i, j].ForeColor = Color.Gold;
+                                    break;
+                                case "Color [Purple]":
+                                    Matrice_Bouton[i, j].BackColor = Color.Purple;
+                                    Matrice_Bouton[i, j].ForeColor = Color.Purple;
+                                    break;
+                                case "Color [Cyan]":
+                                    Matrice_Bouton[i, j].BackColor = Color.Cyan;
+                                    Matrice_Bouton[i, j].ForeColor = Color.Cyan;
+                                    break;
+                                case "Color [DarkCyan]":
+                                    Matrice_Bouton[i, j].BackColor = Color.DarkCyan;
+                                    Matrice_Bouton[i, j].ForeColor = Color.DarkCyan;
+                                    break;
+
+                            }
+                        }
+                    }
+                }
+            }
+            catch
+            {
+
+                
+            }
+
+            //Fin
+        }
+
+~~~
+
+La fonction d'importation est la reciproque de la fonction sauvegarde elle permet grace a un fichier .Matrice_16x16 de ravoir les boutons colorié ainsie que les couleurs dans les TextBox.
+
+**Variable :**
+
+Cette fonctions utilise plusieurs variables. fichier_import est la variable qui permet de lire le fichier. Nom est le nom du fichier qui est pris dans la textbox par defaut c'est : "sans_nom". Couleur est une variable qui sert à savoir quelle est la bonne couleur du bouton de la ligne du fichier. i et j sont les variable lié au boucle. On utilise aussi les variables couleurs des huit textBox.
+
+**Fonctionnement :**
+
+La fonction a la fonctionnement inverse de la fonction sauvegarde. dans un premier temps elle va prendre le nom dans la textbox et essayer d'ouvrir le fichier. Ensuite elle va recopier les huit première ligne dans les huits textbox des couleurs correspondante. Après elle va passer en revue les 256 boutons en changeant leurs couleurs grace a chaque ligne etant la couleur d'un bouton. On prend ce qui est écrit dans un ligne et on passe dans le switch qui determine la couleur. Dans le cas ou la fonction n'arrive pas a ouvrir le fichier elle ne fait rien.
+
+
+
+
+
+
+
+
+
+
+
+
+
