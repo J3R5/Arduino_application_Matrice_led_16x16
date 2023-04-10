@@ -547,9 +547,260 @@ Cette fonctions utilise plusieurs variables. fichier_import est la variable qui 
 
 La fonction a la fonctionnement inverse de la fonction sauvegarde. dans un premier temps elle va prendre le nom dans la textbox et essayer d'ouvrir le fichier. Ensuite elle va recopier les huit première ligne dans les huits textbox des couleurs correspondante. Après elle va passer en revue les 256 boutons en changeant leurs couleurs grace a chaque ligne etant la couleur d'un bouton. On prend ce qui est écrit dans un ligne et on passe dans le switch qui determine la couleur. Dans le cas ou la fonction n'arrive pas a ouvrir le fichier elle ne fait rien.
 
+##### Fonction Bouton Start
+
+~~~C#
+
+        private void Start_Click(object sender, EventArgs e)
+        {
+            /*
+             * Fonction associé au bouton
+             * start lors du click crée
+             * crée le code dans les textebox
+             * 
+             * Jérémy Clémente 11/03/2023
+             */
+
+            //Variable
+            int i, k;
+
+            //initialisation
+            couleur_led1 = Couleur_1.Text;
+            couleur_led2 = Couleur_2.Text;
+            couleur_led3 = Couleur_3.Text;
+            couleur_led4 = Couleur_4.Text;
+            couleur_led5 = Couleur_5.Text;
+            couleur_led6 = Couleur_6.Text;
+            couleur_led7 = Couleur_7.Text;
+            couleur_led8 = Couleur_8.Text;
+
+            //Début
+
+            //reset des TexteBox avant ecriture
+            Texte_code.Clear();
+            Image_code.Clear();
+
+            //Code
+            Texte_code.Text += "//===========Code===========" + Environment.NewLine;
+
+            Texte_code.Text += Environment.NewLine;
+
+            Texte_code.Text += "//-----------Noir-----------" + Environment.NewLine;
+
+            Texte_code.Text += Environment.NewLine;
+
+            for (k = 0; k < 16; k = k + 1)
+            {
+                for (i = 0; i < 16; i = i + 1)
+                {
+                    if (Matrice_Bouton[k, i].BackColor == Color.LightGreen)
+                    {
+                        Texte_code.Text +=  " leds_16x16[" + k + "][" + i + "] = CRGB::Black;"+ Environment.NewLine;
+                    }
+                }
+            }
+
+            Texte_code.Text += Environment.NewLine;
+
+            Texte_code.Text += "//---------Couleur1---------" + Environment.NewLine;
+
+            Texte_code.Text += Environment.NewLine;
+
+            for (k = 0; k < 16; k = k + 1)
+            {
+                for (i = 0; i < 16; i = i + 1)
+                {
+                    if (Matrice_Bouton[k, i].BackColor == Color.Orange)
+                    {
+                        Texte_code.Text += " leds_16x16[" + k + "][" + i + "] = " + couleur_led1 + Environment.NewLine;
+                    }
+                }
+            }
+
+            Texte_code.Text += Environment.NewLine;
+
+            Texte_code.Text += "//---------Couleur2---------" + Environment.NewLine;
+
+            Texte_code.Text += Environment.NewLine;
+
+            for (k = 0; k < 16; k = k + 1)
+            {
+                for (i = 0; i < 16; i = i + 1)
+                {
+                    if (Matrice_Bouton[k, i].BackColor == Color.LightBlue)
+                    {
+                        Texte_code.Text += " leds_16x16[" + k + "][" + i + "] = " + couleur_led2 + Environment.NewLine;
+                    }
+                }
+            }
+
+            Texte_code.Text += Environment.NewLine;
+
+            Texte_code.Text += "//---------Couleur3---------" + Environment.NewLine;
+
+            Texte_code.Text += Environment.NewLine;
+
+            for (k = 0; k < 16; k = k + 1)
+            {
+                for (i = 0; i < 16; i = i + 1)
+                {
+                    if (Matrice_Bouton[k, i].BackColor == Color.DarkBlue)
+                    {
+                        Texte_code.Text += " leds_16x16[" + k + "][" + i + "] = " + couleur_led3 + Environment.NewLine;
+                    }
+                }
+            }
+
+            Texte_code.Text += Environment.NewLine;
+
+            Texte_code.Text += "//---------Couleur4---------" + Environment.NewLine;
+
+            Texte_code.Text += Environment.NewLine;
+
+            for (k = 0; k < 16; k = k + 1)
+            {
+                for (i = 0; i < 16; i = i + 1)
+                {
+                    if (Matrice_Bouton[k, i].BackColor == Color.Red)
+                    {
+                        Texte_code.Text += " leds_16x16[" + k + "][" + i + "] = " + couleur_led4 + Environment.NewLine;
+                    }
+                }
+            }
+
+            Texte_code.Text += Environment.NewLine;
+
+            Texte_code.Text += "//---------Couleur5---------" + Environment.NewLine;
+
+            Texte_code.Text += Environment.NewLine;
+
+            for (k = 0; k < 16; k = k + 1)
+            {
+                for (i = 0; i < 16; i = i + 1)
+                {
+                    if (Matrice_Bouton[k, i].BackColor == Color.Gold)
+                    {
+                        Texte_code.Text += " leds_16x16[" + k + "][" + i + "] = " + couleur_led5 + Environment.NewLine;
+                    }
+                }
+            }
+
+            Texte_code.Text += Environment.NewLine;
+
+            Texte_code.Text += "//---------Couleur6---------" + Environment.NewLine;
+
+            Texte_code.Text += Environment.NewLine;
+
+            for (k = 0; k < 16; k = k + 1)
+            {
+                for (i = 0; i < 16; i = i + 1)
+                {
+                    if (Matrice_Bouton[k, i].BackColor == Color.Purple)
+                    {
+                        Texte_code.Text += " leds_16x16[" + k + "][" + i + "] = " + couleur_led6 + Environment.NewLine;
+                    }
+                }
+            }
+
+            Texte_code.Text += Environment.NewLine;
+
+            Texte_code.Text += "//---------Couleur7---------" + Environment.NewLine;
+
+            Texte_code.Text += Environment.NewLine;
+
+            for (k = 0; k < 16; k = k + 1)
+            {
+                for (i = 0; i < 16; i = i + 1)
+                {
+                    if (Matrice_Bouton[k, i].BackColor == Color.Cyan)
+                    {
+                        Texte_code.Text += " leds_16x16[" + k + "][" + i + "] = " + couleur_led7 + Environment.NewLine;
+                    }
+                }
+            }
+
+            Texte_code.Text += Environment.NewLine;
+
+            Texte_code.Text += "//---------Couleur8---------" + Environment.NewLine;
+
+            Texte_code.Text += Environment.NewLine;
+
+            for (k = 0; k < 16; k = k + 1)
+            {
+                for (i = 0; i < 16; i = i + 1)
+                {
+                    if (Matrice_Bouton[k, i].BackColor == Color.DarkCyan)
+                    {
+                        Texte_code.Text += " leds_16x16[" + k + "][" + i + "] = " + couleur_led8 + Environment.NewLine;
+                    }
+                }
+            }
+
+            Texte_code.Text += Environment.NewLine;
+
+            Texte_code.Text += "//==========================" + Environment.NewLine;
+
+            //Image
+
+            Image_code.Text += "===========Image===========" + Environment.NewLine;
+
+            for (k = 0; k < 16; k = k + 1)
+            {
+                for (i = 0; i < 16; i = i + 1)
+                {
+
+                    //affichage en fonction de la couleurs
+                    if (Matrice_Bouton[k, i].BackColor == Color.LightGreen)
+                    {
+                        Image_code.Text += "◻";
+                    }
+                    else if (Matrice_Bouton[k, i].BackColor == Color.Orange)
+                    {
+                        Image_code.Text += "■";
+                    }
+                    else if (Matrice_Bouton[k, i].BackColor == Color.LightBlue)
+                    {
+                        Image_code.Text += "⬟";
+                    }
+                    else if (Matrice_Bouton[k, i].BackColor == Color.DarkBlue)
+                    {
+                        Image_code.Text += "▥";
+                    }
+                    else if (Matrice_Bouton[k, i].BackColor == Color.Red)
+                    {
+                        Image_code.Text += "▤";
+                    }
+                    else if (Matrice_Bouton[k, i].BackColor == Color.Gold)
+                    {
+                        Image_code.Text += "▨";
+                    }
+                    else if (Matrice_Bouton[k, i].BackColor == Color.Purple)
+                    {
+                        Image_code.Text += "▣";
+                    }
+                    else if (Matrice_Bouton[k, i].BackColor == Color.Cyan)
+                    {
+                        Image_code.Text += "▩";
+                    }
+                    else if (Matrice_Bouton[k, i].BackColor == Color.DarkCyan)
+                    {
+                        Image_code.Text += "▧";
+                    }
+
+                }
+                Image_code.Text += "" + Environment.NewLine;
+            }
+
+            Image_code.Text += "===========================" + Environment.NewLine;
+
+            //Fin
+        }
 
 
 
+~~~
+
+Cette Fonction est celle associé au bouton de start 
 
 
 
