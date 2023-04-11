@@ -800,7 +800,18 @@ La fonction a la fonctionnement inverse de la fonction sauvegarde. dans un premi
 
 ~~~
 
-Cette Fonction est celle associé au bouton de start 
+Cette Fonction est celle associé au bouton de start. Elle va créer le code C++ en prenant les informations dans les textBox de couleur et les couleurs des boutons.
+
+**Variables :**
+
+Cette fonction utilisent peu de variable. Il y a les huits variable lié au couleurs des textBox. Les deux autres variables i et k servent au boucle.
+
+**Fonctionemment :** 
+
+La fonction va d'abord associé les variables de couleurs au textBox. puis elle clear les textBoxs. Ensuite elle commencent a écrire les couleurs en parcourant le tableau d'abord avec le noir (couleur par défaut). Après elle recommence avec les huit couleurs en les séparant le tous est affichée dans la même textBox. Enfin on repasse une dernière fois pour affiché un image dans une autre TextBox.
+On peut noter que il est possible d'optimisé la fonction en ne fesais que 1 passage au lieu de 9 grace a un tableau trié pour obtenir le même résultat.
+
+Ceci est la fin de la parti C# pour plus d'information allé voir le pdf.
 
 
 
