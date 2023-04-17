@@ -433,7 +433,7 @@ les chaque pixels __1__ par __1__ à la main.
 
 La fonction papillon utilise d'elle même la fonction de conversion matrice 2D --> 1D puis elle affiche le résultat grâce à la ligne FastLED.show();
 
-Voilà un résumé de la partie C++ pour plus de détails il faut regarder la document C++ dédié [Document C++]()
+Voilà un résumé de la partie C++ pour plus de détails il faut regarder la document C++ dédié [Document C++](https://github.com/J3R5/Arduino_application_Matrice_led_16x16/blob/main/C%2B%2B%20matrice%20physique/Documentation/Pr%C3%A9sentation%20Compl%C3%A8te%20C%2B%2B.pdf)
 
 
 
