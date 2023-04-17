@@ -2,26 +2,26 @@
 
 ### Introduction
 
-Cette partie est consacrée au code dans la **carte Arduino** avec un exemple de dessins possible crée via l'application __C#__.
+Cette partie est consacrée au code dans la **carte Arduino** avec un exemple de dessins possibles crée via l'application __C#__.
 Le code __C++__ utilise la bibliothèque [FastLed](https://fastled.io/).
 
-##### Compostants :
+##### Composants :
 
 * [Arduino Nano](https://docs.arduino.cc/hardware/nano)
 * [Matrice Led 16x16](https://www.btf-lighting.com/products/ws2812b-panel-screen-8-8-16-16-8-32-pixel-256-pixels-digital-flexible-led-programmed-individually-addressable-full-color-dc5v?_pos=1&_sid=3fc4f91ac&_ss=r&variant=20203594547300)
 
 #### Code :
 
-Dans un premier temps il faut installer la bibliothèque [FastLed](https://fastled.io/) (si vous ne savez pas installé une bibliothèque voici un [tutoriel](https://fablabutc.fr/wp-content/uploads/2021/01/Tutoriel_Installer-une-bibliotheque-pour-Arduino.pdf)).
+Dans un premier temps il faut installer la bibliothèque [FastLed](https://fastled.io/) (si vous ne savez pas installer une bibliothèque voici un [tutoriel](https://fablabutc.fr/wp-content/uploads/2021/01/Tutoriel_Installer-une-bibliotheque-pour-Arduino.pdf)).
 
-Il faut savoir que la matrice de leds est est considérée comme un ruban de __256 leds__ et non comme une vraie matrice 
-donc sois on code directement comme un ruban les 256 sois on code comme une matrice **2D** puis on crée une fonction 
-de conversion **2D** en **1D**. Une variable en **2D** permet de crée des animation de mouvement facilement (exemple : deplacement
+Il faut savoir que la matrice de leds est considérée comme un ruban de __256 leds__ et non comme une vraie matrice 
+donc soit on code directement comme un ruban les 256 soit on code comme une matrice **2D** puis on crée une fonction 
+de conversion **2D** en **1D**. Une variable en **2D** permet de créer des animations de mouvement facilement (exemple : déplacement
 gauche, droite)
 
 #### Initialisation :
 
-Une fois la bibliothèque installer on doit l'importer (via un #include) dans le code :
+Une fois la bibliothèque installée on doit l'importer (via un #include) dans le code :
 ~~~C++
 
 //----------bibliothèque----------//
@@ -58,7 +58,7 @@ int carreaux; //variable position led matrice réel
 #### Void Setup :
 
 Après on passe a L'initialisation la boucle setup ou l'on initialise la matrice puis
-on regle la luminosité
+on règle la luminosité
 
 ~~~C++
 
@@ -88,7 +88,7 @@ void loop() {
 
 ~~~
 
-On utilise une fonction au lieu de mettre directement le code car il y a beaucoup de ligne de code et si on souhaite montré plusieurs image successivement il est plus simple d'utilisé des fonctions.
+On utilise une fonction au lieu de mettre directement le code car il y a beaucoup de ligne de code et si on souhaite montrer plusieurs images successivement il est plus simple d'utiliser des fonctions.
 
 #### Fonction :
 
@@ -102,7 +102,7 @@ Fonction Convertion 2D --> 1D :
 void Matrice_16x16()
 {
   /*
-  * Fonction convertion tableau 2D
+  * Fonction conversion tableau 2D
   * en 1D représentation réel
   * Ruban du tableau
   *
@@ -139,7 +139,7 @@ void Matrice_16x16()
 La matrice de led est un ruban mais aussi un ruban en Zig Zag comme un serpent comme ceci :
 ![Photo](https://github.com/R5ELS/Arduino_application_Matrice_led_16x16/blob/main/Datasheet/photo_tableau.PNG)
 
-une fois la conversion de la variable temporaire au ruban fait on peut afficher les leds ceci est fait dans la deuxième fonction (papillon)
+une fois la conversion de la variable temporaire au ruban faite on peut afficher les leds ceci est fait dans la deuxième fonction (papillon)
 
 Fonction papillon :
 
@@ -150,7 +150,7 @@ void papillon()
   /*
    *  Code générer via l'application
    *  dans ce cas c'est le dessin d'un
-   *  papillon
+   *  papillon.
    *
    *  Jérémy Clémente 11/03/2023
    */
@@ -420,20 +420,20 @@ void papillon()
  leds_16x16[8][11] = CRGB::Yellow;
  //-----------------------------// 
 
- Matrice_16x16();//Convertion tableau 2d théorique en matrice réel
- FastLED.show();//après convertion affichage des leds selon leurs couleurs
+ Matrice_16x16();//Conversion tableau 2d théorique en matrice réel
+ FastLED.show();//après conversion affichage des leds selon leurs couleurs
 
  //Fin
 }
 
 ~~~
 
-la fonction est un peu longue et a été fait via l'application **C#** cela permet de gagner beaucoup de temps et d'évité de faire des erreurs contrairement a si l'on fait 
-les chaque pixels __1__ par __1__ a la main.
+la fonction est un peu longue et elle a été faite via l'application **C#** celà permet de gagner beaucoup de temps et d'éviter de faire des erreurs contrairement à si l'on fait 
+les chaque pixels __1__ par __1__ à la main.
 
-La fonction papillon utilise d'elle même la fonction de convertion matrice 2D --> 1D puis elle affiche le résultat grace a la ligne FastLED.show();
+La fonction papillon utilise d'elle même la fonction de conversion matrice 2D --> 1D puis elle affiche le résultat grâce à la ligne FastLED.show();
 
-Voila un résumé de la partie C++ pour plus de détaille il faut regarder la document C++ dédié [Document C++]()
+Voilà un résumé de la partie C++ pour plus de détails il faut regarder la document C++ dédié [Document C++]()
 
 
 
